@@ -10,13 +10,13 @@ upper_alph = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ
 for i in word_char:
     if i in alph:
       seckond_word.append(i)
-nnnn_word = ''.join(seckond_word)
+n_word = ''.join(seckond_word)
 for j in seckond_word:
     if j in low_alph:
       g = str.upper(j)
-      nnnn_word = nnnn_word.replace(j,g)
+      n_word = n_word.replace(j,g)
 chars = list(upper_alph)
-FINAL_WORD = list(nnnn_word)
+FINAL_WORD = list(n_word)
 print(FINAL_WORD)
 
 key = []
@@ -47,4 +47,4 @@ for b in range(dlinna):
      print(old_FINAL_WORD)
      d += 1
 print('ЗАКОДИРОВАННОЕ СООБЩЕНИЕ: ',''.join(FINL_FINAL_WORD))
-print('рАСКОДИРОВАННОЕ СООБЩЕНИЕ: ',''.join(old_FINAL_WORD))
+print('РАСКОДИРОВАННОЕ СООБЩЕНИЕ: ',''.join(old_FINAL_WORD))
