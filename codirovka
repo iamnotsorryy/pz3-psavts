@@ -1,0 +1,50 @@
+import random
+
+first_word = str(input())
+word_char = list(first_word)
+seckond_word = []
+low_alph = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+alph = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+upper_alph = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+
+for i in word_char:
+    if i in alph:
+      seckond_word.append(i)
+nnnn_word = ''.join(seckond_word)
+for j in seckond_word:
+    if j in low_alph:
+      g = str.upper(j)
+      nnnn_word = nnnn_word.replace(j,g)
+chars = list(upper_alph)
+FINAL_WORD = list(nnnn_word)
+print(FINAL_WORD)
+
+key = []
+dlinna = len(FINAL_WORD)
+random.seed(10)
+for l in range(dlinna):
+    key.append(str(random.randint(0,33)))
+print(key)
+m = 0
+
+FINL_FINAL_WORD = []
+for b in range(dlinna):
+    mesto = upper_alph.find(FINAL_WORD[m])
+    new_mesto = mesto + int(key[m])
+    if new_mesto > 32:
+        new_mesto = new_mesto-33
+    new_single_char = chars[new_mesto]
+    FINL_FINAL_WORD.append(new_single_char)
+    print(FINL_FINAL_WORD)
+    m += 1
+old_FINAL_WORD = []
+d = 0
+for b in range(dlinna):
+    mesto = upper_alph.find(FINL_FINAL_WORD[d])
+    old_mesto = mesto - int(key[d])
+    old_single_char = chars[old_mesto]
+    old_FINAL_WORD.append(old_single_char)
+     print(old_FINAL_WORD)
+     d += 1
+print('ЗАКОДИРОВАННОЕ СООБЩЕНИЕ: ',''.join(FINL_FINAL_WORD))
+print('рАСКОДИРОВАННОЕ СООБЩЕНИЕ: ',''.join(old_FINAL_WORD))
